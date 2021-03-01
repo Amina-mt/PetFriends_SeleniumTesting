@@ -94,7 +94,7 @@ def test_pets_with_alldata():
       assert tip[i].text != ''
       assert age[i].text != ''
 
-def test_pets_with_uniqname():
+def test_pets_with_uniquename():
    # Entering email
    pytest.driver.find_element_by_id('email').send_keys('ami.morales@gmail.com')
    # Entering password
@@ -116,12 +116,12 @@ def test_pets_with_uniqname():
    assert x == 0
 
 
-def test_pets_uniqall():
-   # Вводим email
+def test_all_pets_unique():
+   # Entering email
    pytest.driver.find_element_by_id('email').send_keys('ami.morales@gmail.com')
-   # Вводим пароль
+   # Entering password
    pytest.driver.find_element_by_id('pass').send_keys('1234567')
-   # Нажимаем на кнопку входа в аккаунт
+   # Pressing login button
    pytest.driver.find_element_by_css_selector('button[type="submit"]').click()
    # Checking if there is no pets with the same data
    pytest.driver.get('http://petfriends1.herokuapp.com/my_pets')
